@@ -16,20 +16,22 @@ export function Counter() {
 
   return (
     <div>
-      <div className={styles.row}>  {/*YR: use the css module identified by styles variable*/}
+      <div className={styles.row}>  {/* YR: use the css module identified by styles variable */}
         <button
-          className={  styles.button    /* YR: use the css module identified by styles variable */ }
+          className={  styles.button  }  // YR: use the css module identified by styles variable
           aria-label="Increment value"
-          onClick={() => dispatch(increment())  /*YR:dispatch the action returned from the actionCreator function */}
+          onClick={() => dispatch(increment())}  // YR:dispatch the action returned from the actionCreator function
         >
           +
         </button>
         <span className={styles.value}>{count}</span>  {/*YR: count is returned from useSelector(selectCount)*/}
                                                        {/*YR: use the css module identified by styles variable*/}
         <button
-          className={styles.button}     // YR: use the css module identified by styles variable 
-          aria-label="Decrement value"  // label an interactive element (ARIA=Accessible Rich Internet Applications)
-          onClick={() => dispatch(decrement())} //YR:dispatch the action returned from the actionCreator function
+          className={styles.button}  // YR: use the css module identified by styles variable 
+          aria-label="Decrement value"  // YR: label an interactive element (ARIA=Accessible Rich Internet Applications) 
+
+          onClick={() => dispatch(decrement()) // YR:dispatch the action returned from the actionCreator function
+          }
         >
           -
         </button>
@@ -42,8 +44,7 @@ export function Counter() {
           onChange={e => setIncrementAmount(e.target.value)}  //YR: useState setter
         />
         <button
-          className= {styles.button /* YR: use the css module identified by styles variable */
-          }
+          className= {styles.button} // YR: use the css module identified by styles variable
           onClick={() =>    /*YR: in JSX, onClick has a function, not a string with a function call*/
             dispatch(incrementByAmount(Number(incrementAmount) || 0))  /*YR:dispatch the action returned from the actionCreator function*/
           }
